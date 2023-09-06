@@ -1,0 +1,85 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+.ring-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+/* Pseudo-element representing the circular ring */
+.ring-container::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #68450c6b;  /* Color of the ring */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;  /* So that it sits below the buttons */
+}
+
+.ring-container::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background-color: #3498db;  /* Color of the ring */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;  /* So that it sits below the buttons */
+}
+
+.circle-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.central-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 50%;
+    background-color: #2ecc71;
+    color: white;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.central-btn:hover {
+    background-color: #27ae60;
+}
+
+.circle-btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.circle-btn:hover {
+    background-color: #2980b9;
+}
